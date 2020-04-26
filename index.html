@@ -1,27 +1,103 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title>Google Drive Direct Download Link Generator</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+body {
+				color: #555;
+				margin: 0;
+				font-family: Montserrat, sans-serif;
+}
 
-<link rel="stylesheet" type="text/css" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+#header {
+				display: block;
+				background-color: #4CAF50;
+				padding: 30px 0;
+				
+				font-size: 1.1em;
+				font-weight: bold;
+}
+
+#header a { 
+				display: block;
+				text-align: center;
+				
+				text-decoration: none;
+				color: white;
+				text-transform: uppercase;
+				letter-spacing: 0.025em;				
+}
+
+#header a:hover {
+				color: #222;
+}
+
+#content {
+				padding: 20px;
+}
+
+.container {
+				margin: 20px auto;
+				max-width: 700px;
+				height: 400px;								
+}
+
+input {
+				display: block;
+}
+
+#readingURL {
+				text-align: center;
+				float: left;
+				width: 75%;
+				height: 10%;
+				border: 1px solid black;
+				border-right: 0;
+				margin-bottom: 17px;
+				padding: 2px;
+				border-radius: 4px 0 0 4px;
+}
+
+#mainButton {
+				background-color: #4CAF50;
+				color: white;
+				font-weight: bold;
+				float: right;
+				width: 25%;
+				height: 10%;
+				border: 1px solid #4CAF50;
+				border-left: 0;
+				margin-bottom: 17px;
+				border-radius: 0 4px 4px 0;
+}
+
+#downURL {
+				width: 100%;
+				height: 30%;
+				padding: 5px;
+				border: 1px solid #0e111e;
+				border-radius: 2px 2px 0 0;
+				overflow-x: hidden;
+				overflow-y: scroll;
+}
+
+#copyText {
+				background-color: #4CAF50;
+				color: white;
+				width: 100%;
+				height: 9%;
+				border: 1px solid #4CAF50;
+				border-top: 0;
+				border-radius: 0 0 3px 3px;
+}
+
+</style>
+
 </head>
 
 <body>
-<div id="header"><a href="index.html">Google Drive Download Link Generator</a></div>
-<div id="content">
-<div class="container">
-<input id="readingURL" type="text" placeholder="Enter your Link" required/>
-<input type="button" id="mainButton" value="Get Link" onclick="linkGen()" />
-<span style="display: block; margin-bottom: 7px;">Here your Direct Download Link:</span>
-<textarea id="downURL" readonly></textarea>
-<button id="copyText" onclick="copyFunc()">Copy</button>
-</div>
-</div>
-
 <script type="text/javascript">
 function linkGen() {
 			var DocIDfull = document.getElementById('readingURL').value;
@@ -50,6 +126,18 @@ var copyText = document.getElementById("downURL");
   alert("Copied")}
 }
 </script>
+<div id="header"><a href="index.html">Google Drive Download Link Generator</a></div>
+<div id="content">
+<div class="container">
+<input id="readingURL" type="text" placeholder="Enter your Link" required/>
+<input type="button" id="mainButton" value="Get Link" onclick="linkGen()" />
+<span style="display: block; margin-bottom: 7px;">Here your Direct Download Link:</span>
+<textarea id="downURL" readonly></textarea>
+<div class="tooltip">
+<button id="copyText" onclick="copyFunc()">Copy</button>
+</div>
+</div>
+</div>
 </body>
 
 </html>
