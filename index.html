@@ -1,1 +1,55 @@
-<!DOCTYPE html><html><head><title>Google Drive Direct Download Link Generator</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="styles.css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></head><body><div id="header"><a href="index.html">Google Drive Download Link Generator</a></div><div id="content"><div class="container"><input id="readingURL" type="text" placeholder="Enter your Link" required/><input type="button" id="mainButton" value="Get Link" onclick="linkGen()"/><span style="display: block; margin-bottom: 7px;">Here your Direct Download Link:</span><textarea id="downURL" readonly></textarea><button id="copyText" onclick="copyFunc()">Copy</button></div></div><script type="text/javascript">function linkGen(){var e=document.getElementById("readingURL").value,n=e.indexOf("/d/"),d=e.indexOf("/",n+3);if(-1!=n){if(-1==d)var o=e.slice(n+3);else o=e.slice(n+3,d);var t="https://drive.google.com/uc?export=download&id="+o;document.getElementById("downURL").value=t}else document.getElementById("downURL").value="Error: Invalid URL"}function copyFunc(){var e=document.getElementById("downURL");e.select(),e.setSelectionRange(0,99999),document.execCommand("copy"),e.value&&alert("Copied")}</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Drive Direct Download Link Generator</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="header"><a href="index.html">Google Drive Download Link Generator</a></div>
+<div id="content">
+<div class="container">
+<input id="readingURL" type="text" placeholder="Enter your Link" required/>
+<input type="button" id="mainButton" value="Get Link" onclick="linkGen()" />
+<span style="display: block; margin-bottom: 7px;">Here your Direct Download Link:</span>
+<textarea id="downURL" readonly></textarea>
+<button id="copyText" onclick="copyFunc()">Copy</button>
+</div>
+</div>
+
+<script type="text/javascript">
+function linkGen() {
+			var DocIDfull = document.getElementById('readingURL').value;
+    var DocIDstart = DocIDfull.indexOf('/d/'); 
+    var DocIDend = DocIDfull.indexOf('/', DocIDstart + 3);
+    if (DocIDstart == -1) {
+        document.getElementById('downURL').value = "Error: Invalid URL";
+        return;
+    }
+    if (DocIDend == -1) {
+        var DocID = DocIDfull.slice(DocIDstart + 3)
+    }
+    else {
+        var DocID = DocIDfull.slice(DocIDstart + 3, DocIDend)
+    }
+    var ID = 'https://drive.google.com/uc?export=download&id=' + DocID;
+    document.getElementById('downURL').value = ID;
+}
+
+function copyFunc(){
+var copyText = document.getElementById("downURL");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  if(copyText.value){
+  alert("Copied")}
+}
+</script>
+</body>
+
+</html>
