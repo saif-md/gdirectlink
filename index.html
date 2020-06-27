@@ -1,31 +1,58 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Google Drive Direct Download Link Generator</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Google Drive Direct Download Link Generator</title>
+  
+  <!-- HTML -->
+  <!-- Styles and Scripts -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
 </head>
 
 <body onload="brython()">
-
-<div id="header"><a href="index.html">Google Drive Download Link Generator</a></div>
-<div id="content">
-<div class="container">
-<input id="readLink" type="text" placeholder="Enter your Link" required/>
-<input type="button" id="submitButton" value="Get Link" onclick="linkGen()" />
-<span style="display: block; margin-bottom: 7px;">Here your Direct Download Link:</span>
-<textarea id="downloadLink" readonly></textarea>
-<div class="tooltip">
-<button id="copyText">Copy</button>
-</div>
-</div>
-</div>
-
-<!-- script -->
-<script type="text/python" src="main.py"></script>
+  <section class="hero is-danger is-medium">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          gDirectlink
+        </h1>
+        <h2 class="subtitle">
+          Generate direct Google Drive download links
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <div class="container is-fluid mt-4">
+    <div class="columns is-multiline">
+      <!-- Input taker -->
+      <div class="column is-full">
+        <div class="columns is-mobile is-gapless">
+          <div class="column is-9">
+            <input id="readLink" class="input" style="border-right: 0; border-radius: 0" type="text" placeholder="Enter your link">
+          </div>
+          <div class="column is-3">
+            <button id="submitButton" class="button is-danger is-outlined" style="border-radius: 0">Get</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Output giver -->
+      <div class="column is-full">
+        <span class="subtitle">Here is your link:</span>
+        <textarea id="downloadLink" style="width: 100%; border-bottom: 0;" class="textarea is-small" readonly/>
+        <button id="copyText" class="button is-danger is-outlined" style="border-radius: 0; width: 100%">Copy</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script -->
+  <script type="text/python" src="main.py"></script>
 </body>
 </html>
