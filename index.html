@@ -1,18 +1,20 @@
 <html>
 <head>
-<meta name="google-site-verification" content="BUociFmvZgXQZlAzaDVaPZdIs-jWoV9YKhAqe2xqRgY" />
 <title>Google Drive Direct Download Link Generator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+</script>
 </head>
 
-<body>
+<body onload="brython()">
 <script type="text/python" src="main.py"></script>
 <script type="text/javascript">
 function copyFunc(){
-var copyText = document.getElementById("downURL");
+var copyText = document.getElementById("downloadLink");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");

@@ -41,7 +41,7 @@ input {
   display: block;
 }
 
-#readingURL {
+#readLink {
   text-align: center;
   float: left;
   width: 75%;
@@ -53,7 +53,7 @@ input {
   border-radius: 4px 0 0 4px;
 }
 
-#mainButton {
+#submitButton {
   background-color: #4CAF50;
   color: white;
   font-weight: bold;
@@ -66,7 +66,7 @@ input {
   border-radius: 0 4px 4px 0;
 }
 
-#downURL {
+#downloadLink {
   width: 100%;
   height: 30%;
   padding: 5px;
