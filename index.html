@@ -11,17 +11,7 @@
 </head>
 
 <body onload="brython()">
-<script type="text/python" src="main.py"></script>
-<script type="text/javascript">
-function copyFunc(){
-var copyText = document.getElementById("downloadLink");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  if(copyText.value){
-  alert("Copied")}
-}
-</script>
+
 <div id="header"><a href="index.html">Google Drive Download Link Generator</a></div>
 <div id="content">
 <div class="container">
@@ -34,6 +24,8 @@ var copyText = document.getElementById("downloadLink");
 </div>
 </div>
 </div>
-</body>
 
+<!-- script -->
+<script type="text/python" src="main.py"></script>
+</body>
 </html>
