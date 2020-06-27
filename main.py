@@ -1,4 +1,4 @@
-from browser import document, alert, window
+from browser import document
 
 def linkGenerator(event):
   readLink = document['readLink'].value
