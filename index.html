@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  
+  <!-- SEO Meta Tags -->
   <title>gDirectlink - Google Drive Direct Download Link Generator</title>
+  <meta name="Description" content="gDirectlink is an online tool, where you can convert or generate the file links of Google Drive to a DIRECT download link. You can use the generated link in your blogs, websites or social media to help people directly go for downloading.">
+  <meta name="Keywords" content="google drive direct link converter,google drive direct link generator script,google drive direct link downloader,google drive direct link generator github,google drive direct link generator,google drive video direct download and embed link generator,google drive direct link creator,google drive create direct download link,google drive direct link download,google drive direct download link 2020,google drive direct file link,google drive direct download file,google drive get direct link,how to get google drive direct link,google drive direct link to download,google drive to direct link l,google drive direct download url">
   
   <!-- HTML -->
   <!-- Styles and Scripts -->
@@ -12,6 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-tooltip@3.0.2/dist/css/bulma-tooltip.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/css/bulma-accordion.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
   
   <!-- Brython -->
   <script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
@@ -36,10 +42,10 @@
       <!-- Input taker -->
       <div class="column is-full">
         <div class="columns is-mobile is-gapless">
-          <div class="column is-9">
+          <div class="column is-three-quarters">
             <input id="readLink" class="input" style="border-right: 0; border-radius: 0" type="text" placeholder="Enter your link">
           </div>
-          <div class="column is-3">
+          <div class="column">
             <button id="submitButton" class="button is-danger is-outlined" style="border-radius: 0">Get</button>
           </div>
         </div>
@@ -48,13 +54,48 @@
       <!-- Output giver -->
       <div class="column is-full">
         <span class="subtitle">Here is your link:</span>
-        <textarea id="downloadLink" style="width: 100%; border-bottom: 0;" class="textarea is-small" readonly></textarea>
+        <textarea id="downloadLink" style="border-bottom: 0" class="textarea is-small" readonly></textarea>
         <button id="copyText" class="button is-danger is-outlined" style="border-radius: 0; width: 100%" data-tooltip="Copied!">Copy</button>
+      </div>
+      
+      <!-- FAQ -->
+      <div class="column is-full-tablet">
+        <section class="accordions">
+          <article class="accordion is-info">
+            <div class="accordion-header">
+              <p>How to upload files to Google Drive</p>
+              <button class="toggle" aria-label="toggle"></button>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <strong>Step-1:</strong> Go to <a href="https://drive.google.com" target="_blank">Google Drive</a> and click on "New File". Then click on file.<br>
+                <strong>Step-2:</strong> Locate your file and tap on upload. Wait until the process is finished.<br>
+                Finally your file is uploaded to Google Drive.
+              </div>
+            </div>
+          </article>
+          <article class="accordion is-info">
+            <div class="accordion-header">
+              <p>How to get Google Drive share link</p>
+              <button class="toggle" aria-label="toggle"></button>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <strong>Step-1:</strong> Go to <a class="link" href="https://drive.google.com/" target="_blank">Google Drive</a> and locate the file that you want to share. Now right click on it and then click on <strong>"Get shareable link"</strong>.<br>
+                <strong>Step-2:</strong> Make sure you selected <strong>"Anyone with the link"</strong>. If selected, click on the <strong>"Copy link"</strong> button.<br>
+                That's it!
+              </div>
+            </div>
+          </article>
+        </section>
       </div>
     </div>
   </div>
   
   <!-- Script -->
+  <script type="text/javascript">
+    var accordions = bulmaAccordion.attach();
+  </script>
   <script type="text/python" src="main.py"></script>
 </body>
 </html>
